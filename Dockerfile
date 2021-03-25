@@ -1,10 +1,12 @@
 # Base image
-FROM alpine:latest
+FROM alpine:3.12.4
 
 # Maintainer information
-ARG VCS_REF
 LABEL maintainer="Maksim Stojkovic <https://github.com/maksimstojkovic>"
-LABEL org.opencontainers.image.source https://github.com/maksimstojkovic/docker-duckdns
+LABEL org.opencontainers.image.source https://github.com/maksimstojkovic/docker-duckdns-local
+
+# Default environment variables
+ENV DUCKDNS_DELAY=5
 
 # Install tools required
 RUN apk add --no-cache curl

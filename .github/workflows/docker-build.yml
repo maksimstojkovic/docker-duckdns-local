@@ -4,7 +4,7 @@ on: [push]
 
 env:
   USERNAME: maksimstojkovic
-  PROJECT: duckdns
+  PROJECT: duckdns-local
   PLATFORMS: linux/amd64,linux/arm/v7,linux/arm64
 
 jobs:
