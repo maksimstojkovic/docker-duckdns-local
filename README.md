@@ -1,16 +1,26 @@
 # Duck DNS Updater
 
-[![Build Status](https://github.com/maksimstojkovic/docker-duckdns/workflows/docker%20build/badge.svg)](https://github.com/maksimstojkovic/docker-duckdns)
-[![Docker Pulls](https://img.shields.io/docker/pulls/maksimstojkovic/duckdns)](https://hub.docker.com/repository/docker/maksimstojkovic/duckdns)
-[![Docker Stars](https://img.shields.io/docker/stars/maksimstojkovic/duckdns)](https://hub.docker.com/repository/docker/maksimstojkovic/duckdns)
-[![Image Size](https://images.microbadger.com/badges/image/maksimstojkovic/duckdns.svg)](https://hub.docker.com/repository/docker/maksimstojkovic/duckdns)
-[![Image Version](https://images.microbadger.com/badges/version/maksimstojkovic/duckdns.svg)](https://hub.docker.com/repository/docker/maksimstojkovic/duckdns)
-[![Image Commit](https://images.microbadger.com/badges/commit/maksimstojkovic/duckdns.svg)](https://github.com/maksimstojkovic/docker-duckdns)
+[![Build Status](https://github.com/maksimstojkovic/docker-duckdns/workflows/docker%20build/badge.svg)](https://github.com/maksimstojkovic/docker-duckdns-local)
+[![Docker Pulls](https://img.shields.io/docker/pulls/maksimstojkovic/duckdns-local)](https://hub.docker.com/repository/docker/maksimstojkovic/duckdns-local)
+[![Docker Stars](https://img.shields.io/docker/stars/maksimstojkovic/duckdns-local)](https://hub.docker.com/repository/docker/maksimstojkovic/duckdns-local)
 
-Updates your Duck DNS IP address automatically at the frequency specified. Use `alpine` as a minimal base image for performing `curl` requests.
+Updates DuckDNS to the host's local network IP address at the frequency specified.
 
 ## Variables
 
-* `DUCKDNS_TOKEN`: Duck DNS account token (obtained from [Duck DNS](https://www.duckdns.org))
-* `DUCKDNS_DOMAIN`: Full Duck DNS domain (e.g. `test.duckdns.org`)
-* `DUCKDNS_DELAY`: Delay between IP address updates
+* `TOKEN`: DuckDNS account token (obtained from [Duck DNS](https://www.duckdns.org)).
+* `SUBDOMAIN`: DuckDNS subdomain (e.g. `test` from `test.duckdns.org`).
+* `DELAY`: Delay between IP address updates.
+* `INTERFACE`: Network interface to poll for IP address (e.g. `wlan0`, `eth0`)).
+
+## Recommended `docker run` Command
+
+```
+docker run --rm -it -e TOKEN=<token> -e SUBDOMAIN=<subdomain> -e DELAY=<delay> -e INTERFACE=<interface> --network host --restart unless-stopped maksimstojkovic/duckdns-local
+```
+
+For example:
+
+```
+docker run --rm -it -e TOKEN=XXXXX -e SUBDOMAIN=XXXXX -e DELAY=5 -e INTERFACE=wlan0 --network host --restart unless-stopped maksimstojkovic/duckdns-local
+```
