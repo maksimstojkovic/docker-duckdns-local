@@ -16,11 +16,11 @@ Updates DuckDNS to the host's local network IP address at the frequency specifie
 ## Recommended `docker run` Command
 
 ```
-docker run -d --rm -it -e TOKEN=<token> -e SUBDOMAIN=<subdomain> -e DELAY=<delay> -e INTERFACE=<interface> --network host --restart unless-stopped maksimstojkovic/duckdns-local
+docker run -d --name duckdns -e TOKEN=<token> -e SUBDOMAIN=<subdomain> -e DELAY=<delay> -e INTERFACE=<interface> --network host --restart unless-stopped maksimstojkovic/duckdns-local
 ```
 
 For example:
 
 ```
-docker run -d --rm -it -e TOKEN=XXXXX -e SUBDOMAIN=XXXXX -e DELAY=5 -e INTERFACE=wlan0 --network host --restart unless-stopped maksimstojkovic/duckdns-local
+docker run -d --name duckdns -e TOKEN=XXXXX -e SUBDOMAIN=XXXXX -e DELAY=5 -e INTERFACE=wlan0 --network host --restart unless-stopped maksimstojkovic/duckdns-local
 ```
