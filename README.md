@@ -1,6 +1,6 @@
-# Duck DNS Updater
+# Duck DNS Local IP Updater
 
-[![Build Status](https://github.com/maksimstojkovic/docker-duckdns/workflows/docker%20build/badge.svg)](https://github.com/maksimstojkovic/docker-duckdns-local)
+[![Build Status](https://github.com/maksimstojkovic/docker-duckdns-local/workflows/docker%20build/badge.svg)](https://github.com/maksimstojkovic/docker-duckdns-local)
 [![Docker Pulls](https://img.shields.io/docker/pulls/maksimstojkovic/duckdns-local)](https://hub.docker.com/repository/docker/maksimstojkovic/duckdns-local)
 [![Docker Stars](https://img.shields.io/docker/stars/maksimstojkovic/duckdns-local)](https://hub.docker.com/repository/docker/maksimstojkovic/duckdns-local)
 
