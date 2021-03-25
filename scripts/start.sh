@@ -1,13 +1,18 @@
 #!/bin/sh
 
-# Check variables DUCKDNS_TOKEN, DUCKDNS_DOMAIN, INTERFACE
-if [ -z "$DUCKDNS_TOKEN" ]; then
-	echo "ERROR: Variable DUCKDNS_TOKEN is unset."
+# Check variables TOKEN, DOMAIN, INTERFACE
+if [ -z "$TOKEN" ]; then
+	echo "ERROR: Variable TOKEN is unset."
 	exit 1
 fi
 
-if [ -z "$DUCKDNS_SUBDOMAIN" ]; then
-	echo "ERROR: Variable DUCKDNS_SUBDOMAIN is unset."
+if [ -z "$SUBDOMAIN" ]; then
+	echo "ERROR: Variable SUBDOMAIN is unset."
+	exit 1
+fi
+
+if [ -z "$DELAY" ]; then
+	echo "ERROR: Variable DELAY is unset."
 	exit 1
 fi
 
@@ -30,13 +35,13 @@ if [ -z "$(ip -o link show | awk -F': ' '{print $2}' | grep $INTERFACE)" ]; then
 fi
 
 # Print variables
-echo "DUCKDNS_TOKEN: $DUCKDNS_TOKEN"
-echo "DUCKDNS_DOMAIN: $DUCKDNS_SUBDOMAIN"
-echo "DUCKDNS_DELAY: $DUCKDNS_DELAY minute(s)"
+echo "TOKEN: $TOKEN"
+echo "DOMAIN: $SUBDOMAIN"
+echo "DELAY: $DELAY minute(s)"
 echo "INTERFACE: $INTERFACE"
 
 # Suggest longer delay if below 5 minutes
-if [ "$DUCKDNS_DELAY" -lt 5 ]; then
+if [ "$DELAY" -lt 5 ]; then
   echo "WARNING: Consider using a delay of at least 5 minutes."
 fi
 
