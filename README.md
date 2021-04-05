@@ -1,8 +1,10 @@
 # Duck DNS Local IP Updater
 
-[![docker build](https://github.com/maksimstojkovic/docker-duckdns-local/actions/workflows/docker-build.yml/badge.svg)](https://github.com/maksimstojkovic/docker-duckdns-local/actions/workflows/docker-build.yml)
+[![Build Status](https://github.com/maksimstojkovic/docker-duckdns-local/actions/workflows/docker-build.yml/badge.svg)](https://github.com/maksimstojkovic/docker-duckdns-local)
 [![Docker Pulls](https://img.shields.io/docker/pulls/maksimstojkovic/duckdns-local)](https://hub.docker.com/repository/docker/maksimstojkovic/duckdns-local)
 [![Docker Stars](https://img.shields.io/docker/stars/maksimstojkovic/duckdns-local)](https://hub.docker.com/repository/docker/maksimstojkovic/duckdns-local)
+[![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/maksimstojkovic/duckdns-local)](https://hub.docker.com/repository/docker/maksimstojkovic/duckdns-local)
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/v/maksimstojkovic/duckdns-local)](https://hub.docker.com/repository/docker/maksimstojkovic/duckdns-local)
 
 Updates DuckDNS to the host's local network IP address at the frequency specified.
 
