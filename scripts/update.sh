@@ -1,16 +1,16 @@
 #!/bin/sh
 
-# Update IP
-IP=$(/sbin/ifconfig $INTERFACE | grep 'inet addr' | cut -d: -f2 | awk '{print $1}')
-
-if [ -z "$IP" ]; then
-  echo "IP: Interface not connected, using external network IP address."
-else
-  echo "IP: $IP"
-fi
-
 # Loop update process
 while :; do
+  # Update IP
+  IP=$(/sbin/ifconfig $INTERFACE | grep 'inet addr' | cut -d: -f2 | awk '{print $1}')
+
+  if [ -z "$IP" ]; then
+    echo "IP: Interface not connected, using external network IP address."
+  else
+    echo "IP: $IP"
+  fi
+
   echo url="https://www.duckdns.org/update?domains=${SUBDOMAIN}&token=${TOKEN}&ip=${IP}" | curl -ks -o /scripts/duck.log -K -
 
   # Check that log was created (successful curl) and
